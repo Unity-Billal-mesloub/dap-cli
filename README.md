@@ -130,7 +130,7 @@ Most of what an agent needs lives in [the SKILL.md](dap-cli/skills/dap-cli/SKILL
 ## Building from source
 
 ```bash
-git clone https://github.com/roblourens/dap-cli
+git clone https://github.com/Unity-Billal-mesloub/dap-cli
 cd dap-cli
 npm install
 npm run build
@@ -139,6 +139,4 @@ node dist/index.js --version
 
 `npm run check` runs typecheck, lint, tests, and build.
 
-## License
 
-MIT
