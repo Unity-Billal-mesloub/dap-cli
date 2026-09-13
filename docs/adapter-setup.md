@@ -8,10 +8,9 @@ dap-cli ships four built-in adapter IDs:
 
 | ID | Runtime | Upstream |
 | --- | --- | --- |
-| `js-debug` | Node.js, Chrome, Electron, browsers | [`microsoft/vscode-js-debug`](https://github.com/microsoft/vscode-js-debug) |
-| `debugpy` | Python | [`microsoft/debugpy`](https://github.com/microsoft/debugpy) |
-| `delve` | Go (Delve) | [`go-delve/delve`](https://github.com/go-delve/delve) |
-| `codelldb` | Rust (CodeLLDB) | [`vadimcn/codelldb`](https://github.com/vadimcn/codelldb) |
+| `js-debug` | Node.js, Chrome, Electron, browsers | [`Unity-Billal-mesloub/vscode-js-debug`](https://github.com/Unity-Billal-mesloub/vscode-js-debug) |
+| `debugpy` | Python | [`Unity-Billal-mesloub/debugpy`](https://github.com/Unity-Billal-mesloub/debugpy) |
+| `codelldb` | Rust (CodeLLDB) | [`Unity-Billal-mesloub/codelldb`](https://github.com/Unity-Billal-mesloub/codelldb) |
 
 **Adapter binaries are not bundled with dap-cli.** The first time `dap-cli launch` (or `attach`) needs one, the CLI:
 
@@ -56,10 +55,9 @@ Per-adapter sibling sentinels live one level up at `~/.dap-cli/adapters/.<id>.lo
 
 | Adapter | Pinned version | Source asset |
 | --- | --- | --- |
-| `js-debug` | `1.117.0` | `https://github.com/microsoft/vscode-js-debug/releases/download/v1.117.0/js-debug-dap-v1.117.0.tar.gz` |
+| `js-debug` | `1.117.0` | `https://github.com/Unity-Billal-mesloub/vscode-js-debug/releases/download/v1.117.0/js-debug-dap-v1.117.0.tar.gz` |
 | `debugpy` | `1.8.20` | `pip install debugpy==1.8.20` (PyPI) |
-| `delve` | `v1.26.3` | `https://github.com/go-delve/delve/releases/download/v1.26.3/dlv_<version>_<platform>.<ext>` |
-| `codelldb` | `v1.12.2` | `https://github.com/vadimcn/codelldb/releases/download/v1.12.2/codelldb-darwin-arm64.vsix` (`darwin_arm64` only) |
+| `codelldb` | `v1.12.2` | `https://github.com/Unity-Billal-mesloub/codelldb/releases/download/v1.12.2/codelldb-darwin-arm64.vsix` (`darwin_arm64` only) |
 
 Versions are constants in [`src/adapters/provision/checksums.ts`](../src/adapters/provision/checksums.ts). Bumping a version requires:
 
@@ -184,7 +182,7 @@ The provisioner emits exactly the 13 `provision_*` codes below (D-15). Each carr
 | `provision_network_error` | HTTP failure (DNS, connection refused, 4xx/5xx). | Check connectivity; check the URL in `data.url`; retry. |
 | `provision_proxy_error` | Proxy fetch failed (proxy refused / unreachable). | Verify `HTTPS_PROXY`; bypass with `NO_PROXY=github.com`. |
 | `provision_rate_limited` | GitHub returned 403 with `X-RateLimit-Remaining: 0`. | Set `GITHUB_TOKEN`, or wait for the reset window. |
-| `provision_checksum_mismatch` | Downloaded archive's SHA-256 did not match the pinned table. | Re-run (transient corruption). If persistent, [file an issue](https://github.com/roblourens/dap-cli/issues) — possible supply-chain anomaly. |
+| `provision_checksum_mismatch` | Downloaded archive's SHA-256 did not match the pinned table. | Re-run (transient corruption). If persistent, [file an issue](https://github.com/Unity-Billal-mesloub/dap-cli/issues) — possible supply-chain anomaly. |
 | `provision_python3_missing` | `python3` not on `PATH` (debugpy only). | Install Python 3.8+ (`brew install python` / `apt install python3`). |
 | `provision_python3_venv_unavailable` | `python3 -m venv` failed (Debian-derived distros split this out). | `apt install python3-venv`. |
 | `provision_pip_install_failed` | `pip install debugpy==<v>` exited non-zero. | Inspect stderr tail in `diagnostics`; set `PIP_INDEX_URL` to a mirror. |
