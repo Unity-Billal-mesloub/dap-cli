@@ -1,5 +1,5 @@
 {
-  "name": "@roblourens/dap-cli",
+  "name": "@Unity-Billal-mesloub/dap-cli",
   "version": "0.3.0",
   "type": "module",
   "publishConfig": {
@@ -11,13 +11,13 @@
   },
   "license": "MIT",
   "author": "Rob Lourens <roblourens@gmail.com>",
-  "homepage": "https://github.com/roblourens/dap-cli#readme",
+  "homepage": "https://github.com/Unity-Billal-mesloub/dap-cli#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/roblourens/dap-cli.git"
+    "url": "git+https://github.com/Unity-Billal-mesloub/dap-cli.git"
   },
   "bugs": {
-    "url": "https://github.com/roblourens/dap-cli/issues"
+    "url": "https://github.com/Unity-Billal-mesloub/dap-cli/issues"
   },
   "keywords": [
     "debug",
